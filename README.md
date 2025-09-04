@@ -1,4 +1,5 @@
-# ［standard_react_fastapi_environment］(https://github.com/europanite/standard_react_fastapi_environment) 
+# [Standard React Fastapi Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React Fastapi Environment")
+
 
 **full-stack development environment** using:
 
