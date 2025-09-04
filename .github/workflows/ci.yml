@@ -34,7 +34,7 @@ jobs:
         env:
           DOCKER_BUILDKIT: 1
         run: |
-          docker compose build --pull
+          docker compose --env-file env build --pull
 
       # ----- Closing -----
       - name: Cleanup
@@ -42,4 +42,4 @@ jobs:
           DOCKER_BUILDKIT: 1
         if: always()
         run: |
-          docker compose  down -v --remove-orphans
+          docker compose --env-file ./.env  down -v --remove-orphans
