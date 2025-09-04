@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+    paths:
+      - "backend/**"
+      - "frontend/**"
+      - "db/**"
+      - "docker-compose.yml"
+      - ".github/workflows/docker.yml"
+  pull_request:
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Show Docker versions (debug)
+        run: |
+          docker version
+          docker compose version
+
+      - name: Build containers
+        env:
+          DOCKER_BUILDKIT: 1
+        run: |
+          docker compose --env-file ./service/.env build --pull
+
+      # ----- Closing -----
+      - name: Cleanup
+        env:
+          DOCKER_BUILDKIT: 1
+        if: always()
+        run: |
+          docker compose --env-file ./service/.env  down -v --remove-orphans
