@@ -16,7 +16,6 @@ db.sqlite3
 env/
 venv/
 ENV/
-*.env
 
 # Jupyter
 .ipynb_checkpoints/

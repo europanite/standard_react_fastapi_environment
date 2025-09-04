@@ -4,9 +4,6 @@ on:
   push:
     branches: ["**"]
     paths:
-      - "backend/**"
-      - "frontend/**"
-      - "db/**"
       - "docker-compose.yml"
       - ".github/workflows/docker.yml"
   pull_request:
@@ -34,7 +31,7 @@ jobs:
         env:
           DOCKER_BUILDKIT: 1
         run: |
-          docker compose --env-file ./service/.env build --pull
+          docker compose --env-file .env build --pull
 
       # ----- Closing -----
       - name: Cleanup
@@ -42,4 +39,4 @@ jobs:
           DOCKER_BUILDKIT: 1
         if: always()
         run: |
-          docker compose --env-file ./service/.env  down -v --remove-orphans
+          docker compose --env-file .env  down -v --remove-orphans
