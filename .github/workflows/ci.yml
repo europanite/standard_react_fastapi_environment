@@ -4,7 +4,6 @@ on:
   push:
     branches: ["**"]
     paths:
-      - "./**"
       - "docker-compose.yml"
       - ".github/workflows/docker.yml"
   pull_request:
