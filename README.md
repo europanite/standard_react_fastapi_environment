@@ -45,7 +45,7 @@
 - Expo Go app (for Android/iOS testing)
 
 ### 2. Environment
-- set EXPO_PUBLIC_API_HOST in the  .env file:
+- set REACT_NATIVE_PACKAGER_HOSTNAME in the .env file:
 
 ### 2. Build and start all services:
 
