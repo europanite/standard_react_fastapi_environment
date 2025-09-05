@@ -62,8 +62,8 @@ docker compose up
 - Backend API: http://localhost:8000/docs
 !["backend"](./assets/images/backend.png)
 
-- Frontend UI (WEB): http://localhost:8080
-- Frontend UI (mobile): http://${HOST}:8081
+- Frontend UI (WEB): http://localhost:8081
+- Frontend UI (mobile): exp://${HOST}:8081: access it with the QR.
 !["expo"](./assets/images/expo.png)
 
 ---
