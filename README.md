@@ -1,8 +1,6 @@
 # [Standard React Fastapi Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React Fastapi Environment")
 
 !["frontend"](./assets/images/frontend.png)
-!["backend"](./assets/images/backend.png)
-
 
 **full-stack development environment** using:
 
