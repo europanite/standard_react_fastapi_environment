@@ -4,10 +4,21 @@
 
 **full-stack development environment** using:
 
-- **FastAPI** for the backend API
-- **PostgreSQL** as the database
-- **React Native (Expo Web)** for the frontend UI
-- **Docker Compose** to orchestrate all services
+- **Frontend**: [Expo](https://expo.dev/) (React Native + TypeScript)  
+  - Runs on **Web, Android, and iOS** with a single codebase
+- **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
+- **Database**: PostgreSQL  
+- **Container**: Docker Compose for consistent development setup
+
+---
+
+## Features
+
+- **Cross-platform frontend** with Expo  
+  - Runs as a **web app** or on **Android/iOS devices** via Expo Go or standalone builds
+- **CRUD operations** : Create, Read, Update, Delete records
+- **FastAPI backend** with automatic docs at [/docs](http://localhost:8000/docs)  
+  - REST API with Swagger UI (/docs)
 
 ---
 
@@ -29,7 +40,14 @@
 
 ## 🚀 Getting Started
 
-Build and start all services:
+### 1. Prerequisites
+- Docker & Docker Compose
+- Expo Go app (for Android/iOS testing)
+
+### 2. Environment
+- set EXPO_PUBLIC_API_HOST in the  .env file:
+
+### 2. Build and start all services:
 
 ```bash
 # First-time build
@@ -39,18 +57,14 @@ docker compose up --build
 docker compose up
 ```
 
-Then open:
+### 3. Visit the services:
 
-- Frontend UI: http://localhost:8081
 - Backend API: http://localhost:8000/docs
+!["backend"](./assets/images/backend.png)
 
----
-
-# Features
-
-- Full CRUD: Create, Read, Update, Delete records (id, title)
-- REST API with Swagger UI (/docs)
-- Hot Reloading: Code changes in backend and frontend are reflected immediately in containers
+- Frontend UI (WEB): http://localhost:8080
+- Frontend UI (mobile): http://${HOST}:8081
+!["expo"](./assets/images/expo.png)
 
 ---
 # License
