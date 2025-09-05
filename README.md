@@ -41,7 +41,10 @@ docker compose up
 Then open:
 
 - Backend API: http://localhost:8000/docs
+!["backend"]("assets/images/backend.png")
+
 - Frontend UI: http://localhost:8081
+!["frontend"]("assets/images/frontend.png")
 
 ---
 

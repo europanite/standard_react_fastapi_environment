@@ -137,7 +137,7 @@ export default function App() {
               <View>
                 <Text style={{ fontWeight: "600" }}>Title</Text>
                 <TextInput
-                  placeholder="Title"
+                  placeholder=""
                   value={title}
                   onChangeText={setTitle}
                   style={{ borderWidth: 1, borderRadius: 6, padding: 8 }}

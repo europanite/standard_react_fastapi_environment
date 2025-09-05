@@ -5,7 +5,7 @@ from database import engine
 from models import Base
 from routers import items
 
-app = FastAPI(title="Example FastAPI + CRUD")
+app = FastAPI(title="CRUD APIs")
 
 # CORS for development
 app.add_middleware(
