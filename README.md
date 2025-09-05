@@ -34,7 +34,6 @@
 
 - **db**: PostgreSQL  
   - Port: `5432`  
-  - Data is persisted in `./db_data`
 
 ---
 
