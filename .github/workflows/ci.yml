@@ -29,6 +29,7 @@ jobs:
 
       - name: Build containers
         env:
+          REACT_NATIVE_PACKAGER_HOSTNAME: 192.168.3.1
           DOCKER_BUILDKIT: 1
         run: |
           docker compose --env-file .env build --pull
@@ -36,6 +37,7 @@ jobs:
       # ----- Closing -----
       - name: Cleanup
         env:
+          REACT_NATIVE_PACKAGER_HOSTNAME: 192.168.3.1
           DOCKER_BUILDKIT: 1
         if: always()
         run: |

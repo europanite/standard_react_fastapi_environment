@@ -43,16 +43,16 @@
 - Docker & Docker Compose
 - Expo Go app (for Android/iOS testing)
 
-### 2. Environment
-- set REACT_NATIVE_PACKAGER_HOSTNAME in the .env file:
-
 ### 2. Build and start all services:
 
 ```bash
-# First-time build
-docker compose up --build
+# set environment variables:
+export REACT_NATIVE_PACKAGER_HOSTNAME=YOUR_HOST
 
-# Subsequent runs
+# Build the image
+docker compose build
+
+# Run the container
 docker compose up
 ```
 
