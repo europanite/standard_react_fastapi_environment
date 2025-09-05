@@ -1,9 +1,6 @@
 # [Standard React Fastapi Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React Fastapi Environment")
 
-- Frontend UI: http://localhost:8081
 !["frontend"](./assets/images/frontend.png)
-
-- Backend API: http://localhost:8000/docs
 !["backend"](./assets/images/backend.png)
 
 
