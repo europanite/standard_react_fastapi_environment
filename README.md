@@ -62,7 +62,7 @@ docker compose up
 !["backend"](./assets/images/backend.png)
 
 - Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${HOST}:8081: access it with the QR.
+- Frontend UI (mobile): exp://${HOST}:8081: access it with the QR provided by Expo.
 !["expo"](./assets/images/expo.png)
 
 ---
