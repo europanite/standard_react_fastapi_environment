@@ -1,4 +1,4 @@
-# [Standard React Fastapi Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React Fastapi Environment")
+# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React FastAPI Environment")
 
 [![CI](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml/badge.svg)](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml)
 
