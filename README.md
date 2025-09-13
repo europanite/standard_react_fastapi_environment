@@ -49,7 +49,7 @@
 
 ```bash
 # set environment variables:
-export REACT_NATIVE_PACKAGER_HOSTNAME=YOUR_HOST
+export REACT_NATIVE_PACKAGER_HOSTNAME=${YOUR_HOST}
 
 # Build the image
 docker compose build
@@ -64,7 +64,7 @@ docker compose up
 !["backend"](./assets/images/backend.png)
 
 - Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${HOST}:8081: access it with the QR provided by Expo.
+- Frontend UI (mobile): exp://${YOUR_HOST}:8081: access it with the QR provided by Expo.
 !["expo"](./assets/images/expo.png)
 
 ---
