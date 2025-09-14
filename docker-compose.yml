@@ -7,8 +7,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
-      - dbdata:/var/lib/postgresql/data
-      - ./db/init:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 5s
@@ -72,4 +72,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  dbdata:
+  db_data:
