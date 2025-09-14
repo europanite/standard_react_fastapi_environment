@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml/badge.svg)](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml)
 
-!["frontend"](./assets/images/frontend.png)
+!["web_ui"](./assets/images/web_ui.png)
 
 **full-stack development environment** using:
 
@@ -19,6 +19,7 @@
 - **Cross-platform frontend** with Expo  
   - Runs as a **web app** or on **Android/iOS devices** via Expo Go or standalone builds
 - **CRUD operations** : Create, Read, Update, Delete records
+- **Auth operations** : Signup, Signin, Signout
 - **FastAPI backend** with automatic docs at [/docs](http://localhost:8000/docs)  
   - REST API with Swagger UI (/docs)
 
