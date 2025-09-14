@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from database import engine
 from models import Base
-from routers import items
+from routers import items, auth
 
 app = FastAPI(title="CRUD APIs")
 
@@ -26,3 +26,4 @@ def health():
     return {"status": "ok", "db": ok}
 
 app.include_router(items.router)
+app.include_router(auth.router)

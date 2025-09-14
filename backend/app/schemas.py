@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, EmailStr
 
 class ItemCreate(BaseModel):
     title: str = Field(..., min_length=1, max_length=120)
@@ -11,3 +11,21 @@ class ItemOut(BaseModel):
     title: str
     class Config:
         from_attributes = True
+
+class UserCreate(BaseModel):
+    email: EmailStr
+    password: str = Field(..., min_length=6)
+
+class UserOut(BaseModel):
+    id: int
+    email: EmailStr
+    class Config:
+        from_attributes = True
+
+class SignIn(BaseModel):
+    email: EmailStr
+    password: str
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
