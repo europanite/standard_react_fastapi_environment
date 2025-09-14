@@ -3,7 +3,6 @@
 [![CI](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml/badge.svg)](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml)
 
 !["web_ui"](./assets/images/web_ui.png)
-!["mobile_ui"](./assets/images/mobile_ui.png)
 
 **full-stack development environment** using:
 
