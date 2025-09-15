@@ -148,7 +148,7 @@ export default function HomeScreen() {
         {/* --- FORM: centered & width-limited --- */}
         <View style={{ width: "100%", maxWidth: CONTENT_MAX_W }}>
           <Text style={{ fontSize: 22, fontWeight: "700", marginBottom: 12 }}>
-            CRUD Sample
+            Auth CRUD Sample
           </Text>
 
           {err && (
