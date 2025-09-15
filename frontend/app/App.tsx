@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {
-  Platform, SafeAreaView, View, Text, TextInput, Button, FlatList, TouchableOpacity, useWindowDimensions
+  Platform, View, Text, TextInput, Button, FlatList, TouchableOpacity, useWindowDimensions
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 type Item = { id: number; title: string };
 
@@ -98,6 +100,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+      <StatusBar style="dark" backgroundColor="#fff"  />
       <View style={{ flex: 1, padding: 16 }}>
         <Text style={{ fontSize: 22, fontWeight: "700", marginBottom: 12 }}>
           CRUD Sample
