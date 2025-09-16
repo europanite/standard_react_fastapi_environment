@@ -11,12 +11,16 @@ DB_NAME = os.getenv("DB_NAME")
 
 DATABASE_URL = URL.create(
     "postgresql+psycopg",
-    username=DB_USER, password=DB_PASS,
-    host=DB_HOST, port=DB_PORT, database=DB_NAME,
+    username=DB_USER,
+    password=DB_PASS,
+    host=DB_HOST,
+    port=DB_PORT,
+    database=DB_NAME,
 )
 
 engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+
 
 def get_db():
     db = SessionLocal()
