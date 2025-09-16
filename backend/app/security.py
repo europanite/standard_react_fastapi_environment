@@ -1,4 +1,5 @@
-import os, datetime as dt
+import os
+import datetime as dt
 from typing import Optional
 from jose import jwt
 from passlib.context import CryptContext
@@ -9,16 +10,20 @@ EXPIRE_MIN = int(os.getenv("AUTH_EXPIRE_MINUTES", "60"))
 
 pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
+
 def hash_password(pw: str) -> str:
     return pwd_ctx.hash(pw)
 
+
 def verify_password(pw: str, hashed: str) -> bool:
     return pwd_ctx.verify(pw, hashed)
+
 
 def create_access_token(sub: str) -> str:
     now = dt.datetime.utcnow()
     payload = {"sub": sub, "iat": now, "exp": now + dt.timedelta(minutes=EXPIRE_MIN)}
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGO)
+
 
 def decode_token(token: str) -> Optional[str]:
     try:

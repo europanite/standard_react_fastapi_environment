@@ -1,7 +1,9 @@
 import React from "react";
-import { SafeAreaView, View } from "react-native";
+import { View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 import { AuthProvider } from "./context/Auth";
 import SettingsBar from "./components/SettingsBar";
@@ -13,10 +15,10 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <AuthProvider>
-      <NavigationContainer>
-        <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
-          {/* Gray settings bar at top */}
+    <SafeAreaProvider>
+      <StatusBar style="dark" />
+      <AuthProvider>
+        <NavigationContainer>
           <SettingsBar />
           <View style={{ flex: 1 }}>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -25,8 +27,8 @@ export default function App() {
               <Stack.Screen name="SignUp" component={SignUpScreen} />
             </Stack.Navigator>
           </View>
-        </SafeAreaView>
-      </NavigationContainer>
-    </AuthProvider>
+        </NavigationContainer>
+      </AuthProvider>
+    </SafeAreaProvider>
   );
 }
