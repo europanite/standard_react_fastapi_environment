@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt ./
+COPY requirements-dev.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/ /app/
@@ -19,5 +20,4 @@ COPY app/ /app/
 
 # ===== pytest =====
 FROM backend-base AS backend-test
-COPY requirements-dev.txt ./
 RUN pip install --no-cache-dir -r requirements-dev.txt
