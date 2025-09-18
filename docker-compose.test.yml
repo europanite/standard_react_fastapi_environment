@@ -11,27 +11,29 @@ services:
       interval: 2s
       timeout: 2s
       retries: 15
-
   backend_test:
     build:
       context: ./backend
-      target: backend-test 
-    container_name: backend_test
+      dockerfile: Dockerfile
+      target: backend-test
+    working_dir: /app
+    environment:
+      DATABASE_URL: postgresql+psycopg://test:test@db_test:5432/app_test
+      PYTHONPATH: /app
+      PYTHONUNBUFFERED: "1"
     depends_on:
       db_test:
         condition: service_healthy
-    environment:
-      PYTHONUNBUFFERED: "1"
-      PYTHONPATH: /app
-      # DATABASE_URL: ${DATABASE_URL}
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
-      DB_NAME: ${DB_NAME}
-      DB_USER: ${DB_USER}
-      DB_PASS: ${DB_PASS}
-      BACKEND_PORT: ${BACKEND_PORT}
-      DATABASE_URL: postgresql+psycopg://test:test@db_test:5432/app_test
-    # command: ["pytest", "-q"]
-    command: ["sh", "-lc", "pwd && ls -la && echo '== tests ==' && ls -la tests || true && pytest -q"]
-
-
+    volumes:
+      - ./backend/app:/app:ro
+      - ./backend/tests:/tests:ro
+    command:
+      - sh
+      - -lc
+      - >
+        set -e;
+        echo '== sanity ==';
+        python -c "import sys,os;print('PYTHONPATH',os.getenv('PYTHONPATH'));import app,app.main;print('ok import app')";
+        echo '== tests dir ==';
+        ls -la /tests;
+        pytest -q /tests
