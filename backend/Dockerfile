@@ -12,8 +12,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY app/ /app/
 COPY requirements.txt ./
-COPY requirements.test.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+
+RUN echo "== after base copy ==" && ls -la
+
+RUN echo "== before dev copy ==" && ls -la
+COPY requirements.test.txt .
+RUN echo "== after dev copy ==" && ls -l
+COPY requirements.test.txt ./
+
 # uvicorn
 
 # ===== pytest =====
