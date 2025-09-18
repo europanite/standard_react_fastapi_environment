@@ -1,0 +1,27 @@
+services:
+  db_test:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: app_test
+    ports: []          
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U test -d app_test"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+
+  backend_test:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      target: backend-test 
+    environment:
+      DATABASE_URL: postgresql+psycopg://test:test@db_test:5432/app_test
+      PYTHONUNBUFFERED: "1"
+    depends_on:
+      db_test:
+        condition: service_healthy
+    command: ["pytest", "-q"]
+

@@ -34,13 +34,17 @@ jobs:
         run: |
           docker compose build --pull
 
-      - name: Backend tests (pytest)
-        working-directory: backend
+      - name: Build test images
         run: |
-          python -m venv .venv
-          . .venv/bin/activate
-          pip install -r requirements-dev.txt
-          pytest -q
+          docker compose -f docker-compose.yml -f docker-compose.test.yml build
+
+      - name: Run backend tests (pytest inside Docker)
+        run: |
+          docker compose -f docker-compose.yml -f docker-compose.test.yml run --rm backend_test
+
+      - name: Run frontend tests (Jest inside Docker)
+        run: |
+          docker compose -f docker-compose.yml -f docker-compose.test.yml run --rm frontend_test
 
       # ----- Closing -----
       - name: Cleanup

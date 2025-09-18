@@ -1,4 +1,7 @@
-FROM python:3.12-slim
+FROM python:3.12-slim AS backend-base
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
@@ -12,5 +15,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/ /app/
 
-
 # uvicorn
+
+# ===== pytest =====
+FROM backend-base AS backend-test
+COPY backend/requirements-dev.txt .
+RUN pip install --no-cache-dir -r requirements-dev.txt
