@@ -31,6 +31,7 @@ services:
       DB_PASS: ${DB_PASS}
       BACKEND_PORT: ${BACKEND_PORT}
       DATABASE_URL: postgresql+psycopg://test:test@db_test:5432/app_test
-    command: ["pytest", "-q"]
+    # command: ["pytest", "-q"]
+    command: ["sh", "-lc", "pwd && ls -la && echo '== tests ==' && ls -la tests || true && pytest -q"]
 
 
