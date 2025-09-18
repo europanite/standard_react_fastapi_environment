@@ -22,7 +22,7 @@ RUN echo "== after base copy ==" && ls -la
 FROM backend-base AS backend-test
 WORKDIR /app
 RUN echo "== before dev copy ==" && ls -la
-COPY requirements.test.txt .
-RUN echo "== after dev copy ==" && ls -l
 COPY requirements.test.txt ./
+RUN echo "== after dev copy ==" && ls -l
+
 RUN pip install --no-cache-dir -r requirements.test.txt
