@@ -34,6 +34,14 @@ jobs:
         run: |
           docker compose build --pull
 
+      - name: Backend tests (pytest)
+        working-directory: backend
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          pip install -r requirements-dev.txt
+          pytest -q
+
       # ----- Closing -----
       - name: Cleanup
         env:
