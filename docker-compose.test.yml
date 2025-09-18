@@ -16,10 +16,8 @@ services:
       context: ./backend
       dockerfile: Dockerfile
       target: backend-test
-    working_dir: /app
     environment:
       DATABASE_URL: postgresql+psycopg://test:test@db_test:5432/app_test
-      PYTHONPATH: /app
       PYTHONUNBUFFERED: "1"
     depends_on:
       db_test:
@@ -32,8 +30,6 @@ services:
       - -lc
       - >
         set -e;
-        echo '== sanity ==';
-        python -c "import sys,os;print('PYTHONPATH',os.getenv('PYTHONPATH'));import app,app.main;print('ok import app')";
-        echo '== tests dir ==';
+        python -c "import app, app.main; print('OK: imported app')";
         ls -la /tests;
         pytest -q /tests
