@@ -31,6 +31,6 @@ services:
       - -lc
       - >
         set -e;
-        python -c "import app, app.main; print('OK: imported app')";
+        python -c "import main; print('OK: imported main')";
         ls -la /tests;
         pytest -q /tests
