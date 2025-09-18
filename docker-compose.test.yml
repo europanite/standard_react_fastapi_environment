@@ -14,14 +14,24 @@ services:
 
   backend_test:
     build:
-      context: .
+      context: ./backend
       dockerfile: backend/Dockerfile
       target: backend-test 
-    environment:
-      DATABASE_URL: postgresql+psycopg://test:test@db_test:5432/app_test
-      PYTHONUNBUFFERED: "1"
+    container_name: backend
     depends_on:
       db_test:
         condition: service_healthy
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYTHONPATH: /app
+      # DATABASE_URL: ${DATABASE_URL}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      BACKEND_PORT: ${BACKEND_PORT}
+      DATABASE_URL: postgresql+psycopg://test:test@db_test:5432/app_test
     command: ["pytest", "-q"]
+
 
