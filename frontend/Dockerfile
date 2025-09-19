@@ -6,5 +6,4 @@ COPY app/ .
 
 RUN npm ci --omit=dev
 
-RUN npm run build
 CMD ["npm", "start"]
