@@ -34,7 +34,7 @@ jobs:
         run: |
           docker compose build --pull
 
-      # ----- Build for test -----
+      # ----- Build For Tests -----
       - name: Build test images
         env:
           REACT_NATIVE_PACKAGER_HOSTNAME: 192.168.3.1
@@ -42,7 +42,7 @@ jobs:
         run: |
           docker compose -f docker-compose.yml -f docker-compose.test.yml build
 
-      # ----- Backend -----
+      # ----- Backend Test-----
       - name: Run backend tests (pytest inside Docker)
         env:
           REACT_NATIVE_PACKAGER_HOSTNAME: 192.168.3.1
@@ -50,14 +50,13 @@ jobs:
         run: |
           docker compose -f docker-compose.yml -f docker-compose.test.yml run --rm backend_test
 
-      # ----- Frontend -----
+      # ----- Frontend Test-----
       - name: Run frontend tests (jest inside Docker)
         env:
           REACT_NATIVE_PACKAGER_HOSTNAME: 192.168.3.1
           DOCKER_BUILDKIT: 1
         run: |
           docker compose -f docker-compose.yml -f docker-compose.test.yml run --rm frontend_test
-
 
       # ----- Closing -----
       - name: Cleanup
