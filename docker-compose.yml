@@ -49,6 +49,7 @@ services:
     tty: true
     volumes:
       - ./frontend/app:/app
+      - /app/node_modules
     environment:
       EXPO_TUNNEL: ${EXPO_TUNNEL}
       EXPO_DEVTOOLS_LISTEN_ADDRESS: ${EXPO_DEVTOOLS_LISTEN_ADDRESS}

@@ -42,5 +42,6 @@ services:
       EXPO_PUBLIC_API_BASE: ${EXPO_PUBLIC_API_BASE}
     volumes:
       - ./frontend/app:/app
+      - /app/node_modules
     command: >-
       sh -lc "npm ci && npm test -- --ci --runInBand --verbose"
