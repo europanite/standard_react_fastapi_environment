@@ -34,13 +34,21 @@ jobs:
         run: |
           docker compose build --pull
 
+      # ----- Build for test -----
       - name: Build test images
         run: |
           docker compose -f docker-compose.yml -f docker-compose.test.yml build
 
+      # ----- Backend -----
       - name: Run backend tests (pytest inside Docker)
         run: |
           docker compose -f docker-compose.yml -f docker-compose.test.yml run --rm backend_test
+
+      # ----- Frontend -----
+      - name: Run backend tests (pytest inside Docker)
+        run: |
+          docker compose -f docker-compose.yml -f docker-compose.test.yml run --rm frontend_test
+
 
       # ----- Closing -----
       - name: Cleanup
