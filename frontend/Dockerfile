@@ -2,5 +2,7 @@ FROM node:20-bullseye
 
 WORKDIR /app
 
-RUN npm install -g expo-cli
+COPY app/package*.json ./
+RUN npm ci --omit=dev
 
+CMD ["npm", "start"]
