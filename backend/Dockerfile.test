@@ -10,6 +10,5 @@ COPY pytest.ini ./
 
 COPY app/ /app/
 COPY pytest.ini /app/
-COPY tests/ /tests/
 
 CMD ["pytest","-q","--maxfail=1","--disable-warnings"]
