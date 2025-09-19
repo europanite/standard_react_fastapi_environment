@@ -9,6 +9,7 @@ WORKDIR /app
 COPY pytest.ini ./
 
 COPY app/ /app/
+COPY pytest.ini /app/
 COPY test/ /test/
 
 CMD ["pytest","-q","--maxfail=1","--disable-warnings"]
