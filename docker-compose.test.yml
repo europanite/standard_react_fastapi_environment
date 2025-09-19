@@ -14,7 +14,7 @@ services:
   backend_test:
     build:
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.test
     environment:
       PYTHONPATH: /app
       DATABASE_URL: postgresql+psycopg://test:test@db_test:5432/app_test
