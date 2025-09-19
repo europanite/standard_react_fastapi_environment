@@ -16,7 +16,6 @@ jobs:
         run: |
           docker build \
             -f backend/Dockerfile \
-            --target backend-test \
             -t local/backend-test:ci \
             backend
 
@@ -24,7 +23,6 @@ jobs:
         run: |
           docker build \
             -f frontend/Dockerfile \
-            --target frontend-test \
             -t local/frontend-test:ci \
             frontend
 
