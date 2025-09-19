@@ -25,6 +25,7 @@ services:
     volumes:
       - ./backend/app:/app
       - ./backend/tests:/tests
+      - ./backend/pytest.ini:/app/pytest.ini:ro
     command: ["pytest", "-q", "--maxfail=1", "--disable-warnings"]
   frontend_test:
     build:
