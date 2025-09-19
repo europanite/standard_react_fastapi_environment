@@ -23,8 +23,8 @@ services:
       db_test:
         condition: service_healthy
     volumes:
-      - ./backend/app:/app:ro
-      - ./backend/tests:/tests:ro
+      - ./backend/app:/app
+      - ./backend/tests:/tests
     command: ["pytest", "-q", "--maxfail=1", "--disable-warnings"]
   frontend_test:
     build:
