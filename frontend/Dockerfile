@@ -1,4 +1,4 @@
-FROM node:20-bullseye
+FROM node:20-bullseye AS frontend-base
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ RUN npm install -g expo-cli
 
 COPY app/ /app/
 
-# ===== pytest =====
+# ===== jest =====
 FROM frontend-base AS frontend-test
 
 WORKDIR /app
