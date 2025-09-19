@@ -1,9 +1,15 @@
 name: CI
-
 on:
   push:
+    branches: ["**"]
+    paths:
+      - "docker-compose.yml"
+      - ".github/workflows/docker.yml"
   pull_request:
   workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   build-test-images:
     runs-on: ubuntu-latest
