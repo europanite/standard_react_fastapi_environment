@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt -r requirements.test.txt
 
 WORKDIR /app
 
-COPY app/ /app/
-COPY pytest.ini /app/
+# COPY app/ /app/
+# COPY pytest.ini /app/
 
 CMD ["pytest","-q","--maxfail=1","--disable-warnings"]
