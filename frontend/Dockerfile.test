@@ -7,4 +7,4 @@ RUN npm ci
 
 COPY app/ /app/
 
-CMD ["npm","test","--","--ci","--runInBand"]
+CMD ["npm","test","--","--ci","--runInBand","--verbose"]
