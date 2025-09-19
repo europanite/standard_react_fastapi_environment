@@ -17,10 +17,10 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
-
   backend:
     build:
       context: ./backend
+      dockerfile: Dockerfile
     container_name: backend
     depends_on:
       db:
@@ -36,14 +36,13 @@ services:
     volumes:
       - ./backend/app:/app
     command: uvicorn main:app --host 0.0.0.0 --port ${BACKEND_PORT} --reload
-
     ports:
       - "${BACKEND_PORT}:${BACKEND_PORT}"
     restart: unless-stopped
-
   frontend:
     build:
       context: ./frontend
+      dockerfile: Dockerfile
     container_name: frontend
     working_dir: /app
     stdin_open: true

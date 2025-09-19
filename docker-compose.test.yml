@@ -15,7 +15,6 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-      target: backend-test
     environment:
       PYTHONPATH: /app
       DATABASE_URL: postgresql+psycopg://test:test@db_test:5432/app_test
@@ -26,25 +25,20 @@ services:
     volumes:
       - ./backend/app:/app:ro
       - ./backend/tests:/tests:ro
-    command:
-      - sh
-      - -lc
-      - >
-        set -e;
-        python -c "import main; print('OK: imported main')";
-        ls -la /tests;
-        pytest -q /tests
+    command: ["pytest", "-q", "--maxfail=1", "--disable-warnings"]
   frontend_test:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
-      target: frontend-test
+      dockerfile: Dockerfile.test
     working_dir: /app
     environment:
+      CI: "1"
       EXPO_TUNNEL: ${EXPO_TUNNEL}
       EXPO_DEVTOOLS_LISTEN_ADDRESS: ${EXPO_DEVTOOLS_LISTEN_ADDRESS}
       REACT_NATIVE_PACKAGER_HOSTNAME: ${REACT_NATIVE_PACKAGER_HOSTNAME}
       EXPO_PUBLIC_API_HOST: ${EXPO_PUBLIC_API_HOST}
       EXPO_PUBLIC_API_PORT: ${EXPO_PUBLIC_API_PORT}
       EXPO_PUBLIC_API_BASE: ${EXPO_PUBLIC_API_BASE}
-    command: ["npm", "test", "--silent"]
+    volumes:
+      - ./frontend/app:/app
+    command: ["npm", "test", "--", "--ci", "--runInBand"]
