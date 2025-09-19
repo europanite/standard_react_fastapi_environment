@@ -68,6 +68,5 @@ services:
         npx expo start
       "
     restart: unless-stopped
-
 volumes:
   db_data:
