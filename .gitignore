@@ -45,3 +45,11 @@ desktop.ini
 *.pid
 *.sock
 *.tar
+
+# coverage reports (backend & frontend)
+coverage/
+backend/app/.coverage/
+frontend/app/coverage/
+
+# Jest cache
+frontend/app/.jest-cache/
