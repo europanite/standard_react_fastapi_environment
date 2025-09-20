@@ -30,6 +30,7 @@ services:
       - ./backend/app:/app
       - ./backend/tests:/tests
       - ./backend/pytest.ini:/app/pytest.ini:ro
+      - ./backend/reports:/reports
     command: ["pytest", "-q", "--maxfail=1", "--disable-warnings"]
   frontend_test:
     container_name: frontend_test
