@@ -1,4 +1,3 @@
-// frontend/app/screens/HomeScreen.tsx
 // CRUD Home screen
 // - Matches SignIn/SignUp/SettingsBar layout: centered content with max width (480px).
 // - Allows typing while signed out, but blocks submitting (CREATE/UPDATE/DELETE) and nudges to SignIn.
