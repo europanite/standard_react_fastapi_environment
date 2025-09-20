@@ -37,6 +37,7 @@ export default function SignInScreen() {
             <View>
               <Text>Email</Text>
               <TextInput
+                testID="email"
                 style={{ borderWidth: 1, borderRadius: 6, padding: 8, width: "100%" }}
                 value={email}
                 onChangeText={setEmail}
@@ -47,6 +48,7 @@ export default function SignInScreen() {
             <View>
               <Text>Password</Text>
               <TextInput
+                testID="password"
                 style={{ borderWidth: 1, borderRadius: 6, padding: 8, width: "100%" }}
                 value={pw}
                 onChangeText={setPw}
@@ -55,7 +57,7 @@ export default function SignInScreen() {
             </View>
           </View>
 
-          <Button title={loading ? "Signing in..." : "Sign In"} onPress={onSubmit} />
+          <Button testID="submit" title={loading ? "Signing in..." : "Sign In"} onPress={onSubmit} />
         </View>
       </View>
     </View>

@@ -36,7 +36,8 @@ export default function SignUpScreen() {
           <View style={{ gap: 8, borderWidth: 1, borderRadius: 8, padding: 12 }}>
             <View>
               <Text>Email</Text>
-              <TextInput
+              <TextInput 
+                testID="email"
                 style={{ borderWidth: 1, borderRadius: 6, padding: 8, width: "100%" }}
                 value={email}
                 onChangeText={setEmail}
@@ -47,6 +48,7 @@ export default function SignUpScreen() {
             <View>
               <Text>Password (min 6)</Text>
               <TextInput
+                testID="password"
                 style={{ borderWidth: 1, borderRadius: 6, padding: 8, width: "100%" }}
                 value={pw}
                 onChangeText={setPw}
@@ -55,7 +57,7 @@ export default function SignUpScreen() {
             </View>
           </View>
 
-          <Button title={loading ? "Signing up..." : "Sign Up"} onPress={onSubmit} />
+          <Button testID="submit" title={loading ? "Signing up..." : "Sign Up"} onPress={onSubmit} />
         </View>
       </View>
     </View>
