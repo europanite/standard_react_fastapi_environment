@@ -8,10 +8,14 @@ def test_signup_success(client: TestClient):
     assert data["email"] == "u1@example.com"
     assert "id" in data
 
-def test_signup_short_password(client: TestClient):
+def test_signup_short_password(client):
     r = client.post("/auth/signup", json={"email": "u2@example.com", "password": "123"})
-    assert r.status_code == 400
-    assert "Password must be at least 6 characters" in r.text
+    assert r.status_code == 422
+    detail = r.json().get("detail", [])
+    assert any(
+        (d.get("loc")[-1] == "password") and ("string_too_short" in d.get("type", ""))
+        for d in detail
+    )
 
 def test_signup_duplicate_email(client: TestClient):
     client.post("/auth/signup", json={"email": "u3@example.com", "password": "123456"})
