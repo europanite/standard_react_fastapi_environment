@@ -20,7 +20,7 @@ def verify_password(pw: str, hashed: str) -> bool:
 
 
 def create_access_token(sub: str) -> str:
-    now = dt.datetime.utcnow()
+    now = dt.datetime.now(dt.timezone.utc)
     payload = {"sub": sub, "iat": now, "exp": now + dt.timedelta(minutes=EXPIRE_MIN)}
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGO)
 
