@@ -12,6 +12,7 @@ def test_signup_duplicate_email(client: TestClient):
     # 実装により 400 or 409 が返る想定
     assert r2.status_code in (400, 409)
 
+
 # 2) サインインでパスワード不一致 → 401
 def test_signin_wrong_password(client: TestClient):
     email = "wrongpw@example.com"
@@ -21,10 +22,12 @@ def test_signin_wrong_password(client: TestClient):
     r = client.post("/auth/signin", json={"email": email, "password": "not-correct"})
     assert r.status_code == 401
 
+
 # 3) 不正トークンで /auth/me → 401（JWT デコード失敗の枝）
 def test_me_invalid_token(client: TestClient):
     r = client.get("/auth/me", headers={"Authorization": "Bearer not-a-token"})
     assert r.status_code == 401
+
 
 # 4) 期限切れトークンで /auth/me → 401（exp チェックの枝）
 def test_me_expired_token(client: TestClient, monkeypatch):
