@@ -8,6 +8,10 @@ on:
       - "backend/**"
       - ".github/workflows/lint.yml"
 
+permissions:
+  contents: read
+  security-events: write
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -31,11 +35,15 @@ jobs:
       - name: Ruff (lint)
         run: ruff check backend/app backend/tests
 
-      - name: Ruff SARIF
-        if: always()
-        run: ruff check --output-format sarif backend/app backend/tests > ruff.sarif || true
-      - name: Upload SARIF
-        if: always()
+      - name: Upload SARIF to Code Scanning
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: ruff.sarif
+      - name: Keep SARIF as artifact (fork PR)
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == true
+        uses: actions/upload-artifact@v4
+        with:
+          name: ruff-sarif
+          path: ruff.sarif
+
