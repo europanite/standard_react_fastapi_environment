@@ -6,7 +6,7 @@ on:
   pull_request:
     paths:
       - "backend/**"
-      - ".github/workflows/ci-python-lint.yml"
+      - ".github/workflows/lint.yml"
 
 jobs:
   lint:
