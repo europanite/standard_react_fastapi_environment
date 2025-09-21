@@ -1,49 +1,48 @@
-from fastapi.testclient import TestClient
-import security
+from http import HTTPStatus
 
-# 1) 同じメールで2回サインアップ → 409 or 400
+import security
+from fastapi.testclient import TestClient
+
+
+# 1) double sign up -> 409 or 400
 def test_signup_duplicate_email(client: TestClient):
     email = "dup@example.com"
-    pw = "abcdef"  # min length を満たす
+    pw = "abcdef"  # min length
     r1 = client.post("/auth/signup", json={"email": email, "password": pw})
-    assert r1.status_code in (200, 201)
+    assert r1.status_code in (HTTPStatus.OK, HTTPStatus.CREATED)
 
     r2 = client.post("/auth/signup", json={"email": email, "password": pw})
-    # 実装により 400 or 409 が返る想定
-    assert r2.status_code in (400, 409)
+    assert r2.status_code in (HTTPStatus.BAD_REQUEST, HTTPStatus.CONFLICT)
 
 
-# 2) サインインでパスワード不一致 → 401
+# 2) password inconsistent -> 401
 def test_signin_wrong_password(client: TestClient):
     email = "wrongpw@example.com"
     ok_pw = "abcdef"
     client.post("/auth/signup", json={"email": email, "password": ok_pw})
 
     r = client.post("/auth/signin", json={"email": email, "password": "not-correct"})
-    assert r.status_code == 401
+    assert r.status_code == HTTPStatus.UNAUTHORIZED
 
 
-# 3) 不正トークンで /auth/me → 401（JWT デコード失敗の枝）
+# 3) bad token /auth/me -> 401: JWT decode failure
 def test_me_invalid_token(client: TestClient):
     r = client.get("/auth/me", headers={"Authorization": "Bearer not-a-token"})
-    assert r.status_code == 401
+    assert r.status_code == HTTPStatus.UNAUTHORIZED
 
 
-# 4) 期限切れトークンで /auth/me → 401（exp チェックの枝）
+# 4) expired token /auth/me -> 401: exp check
 def test_me_expired_token(client: TestClient, monkeypatch):
-    # ユーザを作っておく（デコード前に弾かれるが一応）
     email = "expired@example.com"
     pw = "abcdef"
     client.post("/auth/signup", json={"email": email, "password": pw})
 
-    # 有効期限を「過去」にしてトークン発行
     original = security.EXPIRE_MIN
     monkeypatch.setattr(security, "EXPIRE_MIN", -1)
     try:
         token = security.create_access_token(email)
     finally:
-        # 他テストへ影響しないよう戻す
         monkeypatch.setattr(security, "EXPIRE_MIN", original)
 
     r = client.get("/auth/me", headers={"Authorization": f"Bearer {token}"})
-    assert r.status_code == 401
+    assert r.status_code == HTTPStatus.UNAUTHORIZED

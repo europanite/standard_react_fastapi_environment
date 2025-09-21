@@ -15,11 +15,13 @@ exclude = '''
 target-version = "py312"
 line-length = 100
 extend-exclude = ["migrations", "build", "dist", "node_modules", ".venv"]
+
+[tool.ruff.lint]
 select = ["E", "F", "W", "I", "UP", "B", "PL", "RUF"]
 ignore = [
-  "E203",
-  "W503",
+  "E203", 
+  "B008"
 ]
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = ["app"]

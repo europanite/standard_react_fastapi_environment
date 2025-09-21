@@ -1,10 +1,11 @@
-from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy import text
+
 from database import engine
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from models import Base
-from routers import items, auth
+from routers import auth, items
+from sqlalchemy import text
 
 
 @asynccontextmanager
