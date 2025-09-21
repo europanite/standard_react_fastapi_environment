@@ -5,12 +5,13 @@ from sqlalchemy import text
 from database import engine
 from models import Base
 from routers import items, auth
-from database import engine
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
     yield
+
 
 app = FastAPI(title="CRUD APIs", lifespan=lifespan)
 
