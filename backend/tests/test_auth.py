@@ -13,7 +13,7 @@ def test_signup_success(client: TestClient):
 
 def test_signup_short_password(client):
     r = client.post("/auth/signup", json={"email": "u2@example.com", "password": "123"})
-    assert r.status_code == HTTPStatus.UNPROCESSABLE_CONTENT
+    assert r.status_code == HTTPStatus.UNPROCESSABLE_ENTITY
     detail = r.json().get("detail", [])
     assert any(
         (d.get("loc")[-1] == "password") and ("string_too_short" in d.get("type", ""))
