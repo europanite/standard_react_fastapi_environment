@@ -1,16 +1,18 @@
-from fastapi import FastAPI
 from contextlib import asynccontextmanager
+
+from database import engine
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy import text
-from database import engine
 from models import Base
-from routers import items, auth
-from database import engine
+from routers import auth, items
+from sqlalchemy import text
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
     yield
+
 
 app = FastAPI(title="CRUD APIs", lifespan=lifespan)
 

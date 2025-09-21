@@ -1,10 +1,9 @@
-from typing import List
+import models
+import schemas
+from database import get_db
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import select
 from sqlalchemy.orm import Session
-from database import get_db
-import models
-import schemas
 
 router = APIRouter(prefix="/items", tags=["items"])
 
@@ -18,7 +17,7 @@ def create_item(payload: schemas.ItemCreate, db: Session = Depends(get_db)):
     return item
 
 
-@router.get("", response_model=List[schemas.ItemOut])
+@router.get("", response_model=list[schemas.ItemOut])
 def list_items(
     db: Session = Depends(get_db),
     limit: int = Query(50, ge=1, le=200),
@@ -41,9 +40,7 @@ def get_item(item_id: int, db: Session = Depends(get_db)):
 
 
 @router.put("/{item_id}", response_model=schemas.ItemOut)
-def update_item(
-    item_id: int, payload: schemas.ItemUpdate, db: Session = Depends(get_db)
-):
+def update_item(item_id: int, payload: schemas.ItemUpdate, db: Session = Depends(get_db)):
     item = db.get(models.Item, item_id)
     if not item:
         raise HTTPException(404, "Item not found")
@@ -61,4 +58,3 @@ def delete_item(item_id: int, db: Session = Depends(get_db)):
         raise HTTPException(404, "Item not found")
     db.delete(item)
     db.commit()
-    return None
