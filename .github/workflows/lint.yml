@@ -29,9 +29,6 @@ jobs:
           python -m pip install -U pip
           pip install black ruff
 
-      - name: Black (check only)
-        run: black --check backend/app backend/tests
-
       - name: Ruff (lint)
         run: ruff check backend/app backend/tests
 

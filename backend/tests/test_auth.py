@@ -4,7 +4,9 @@ from fastapi.testclient import TestClient
 
 
 def test_signup_success(client: TestClient):
-    r = client.post("/auth/signup", json={"email": "u1@example.com", "password": "123456"})
+    r = client.post(
+        "/auth/signup", json={"email": "u1@example.com", "password": "123456"}
+    )
     assert r.status_code == HTTPStatus.CREATED, r.text
     data = r.json()
     assert data["email"] == "u1@example.com"
@@ -23,21 +25,27 @@ def test_signup_short_password(client):
 
 def test_signup_duplicate_email(client: TestClient):
     client.post("/auth/signup", json={"email": "u3@example.com", "password": "123456"})
-    r = client.post("/auth/signup", json={"email": "u3@example.com", "password": "abcdef"})
+    r = client.post(
+        "/auth/signup", json={"email": "u3@example.com", "password": "abcdef"}
+    )
     assert r.status_code == HTTPStatus.BAD_REQUEST
     assert "Email already registered" in r.text
 
 
 def test_signin_ok(client: TestClient):
     client.post("/auth/signup", json={"email": "u4@example.com", "password": "abcdef"})
-    r = client.post("/auth/signin", json={"email": "u4@example.com", "password": "abcdef"})
+    r = client.post(
+        "/auth/signin", json={"email": "u4@example.com", "password": "abcdef"}
+    )
     assert r.status_code == HTTPStatus.OK
     token = r.json().get("access_token")
     assert token and isinstance(token, str)
 
 
 def test_signin_invalid(client: TestClient):
-    r = client.post("/auth/signin", json={"email": "nope@example.com", "password": "xxxxx"})
+    r = client.post(
+        "/auth/signin", json={"email": "nope@example.com", "password": "xxxxx"}
+    )
     assert r.status_code == HTTPStatus.UNAUTHORIZED
 
 

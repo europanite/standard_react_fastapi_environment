@@ -40,7 +40,9 @@ def get_item(item_id: int, db: Session = Depends(get_db)):
 
 
 @router.put("/{item_id}", response_model=schemas.ItemOut)
-def update_item(item_id: int, payload: schemas.ItemUpdate, db: Session = Depends(get_db)):
+def update_item(
+    item_id: int, payload: schemas.ItemUpdate, db: Session = Depends(get_db)
+):
     item = db.get(models.Item, item_id)
     if not item:
         raise HTTPException(404, "Item not found")

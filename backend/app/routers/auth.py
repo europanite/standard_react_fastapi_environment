@@ -11,15 +11,21 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 MIN_LENGTH_PASSWORD = 6
 
 
-@router.post("/signup", response_model=schemas.UserOut, status_code=status.HTTP_201_CREATED)
+@router.post(
+    "/signup", response_model=schemas.UserOut, status_code=status.HTTP_201_CREATED
+)
 def signup(payload: schemas.UserCreate, db: Session = Depends(get_db)):
     # Explicit password length check to return friendly error
     if len(payload.password) < MIN_LENGTH_PASSWORD:
-        raise HTTPException(status_code=400, detail="Password must be at least 6 characters.")
+        raise HTTPException(
+            status_code=400, detail="Password must be at least 6 characters."
+        )
     exists = db.scalar(select(models.User).where(models.User.email == payload.email))
     if exists:
         raise HTTPException(status_code=400, detail="Email already registered.")
-    user = models.User(email=payload.email, hashed_password=hash_password(payload.password))
+    user = models.User(
+        email=payload.email, hashed_password=hash_password(payload.password)
+    )
     db.add(user)
     db.commit()
     db.refresh(user)
