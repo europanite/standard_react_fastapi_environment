@@ -15,7 +15,9 @@ def test_create_and_get_item(client: TestClient):
 def test_list_items_with_query_and_paging(client: TestClient):
     titles = ["apple", "banana", "applet", "band"]
     for t in titles:
-        assert client.post("/items", json={"title": t}).status_code == HTTPStatus.CREATED
+        assert (
+            client.post("/items", json={"title": t}).status_code == HTTPStatus.CREATED
+        )
 
     # q=app → "apple","applet"
     r = client.get("/items", params={"q": "app", "limit": 10, "offset": 0})
@@ -48,5 +50,8 @@ def test_delete_item(client: TestClient):
 
 def test_get_update_delete_not_found(client: TestClient):
     assert client.get("/items/999999").status_code == HTTPStatus.NOT_FOUND
-    assert client.put("/items/999999", json={"title": "x"}).status_code == HTTPStatus.NOT_FOUND
+    assert (
+        client.put("/items/999999", json={"title": "x"}).status_code
+        == HTTPStatus.NOT_FOUND
+    )
     assert client.delete("/items/999999").status_code == HTTPStatus.NOT_FOUND
