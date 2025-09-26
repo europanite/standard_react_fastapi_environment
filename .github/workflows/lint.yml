@@ -7,7 +7,8 @@ on:
     paths:
       - "backend/**"
       - ".github/workflows/lint.yml"
-
+  schedule:
+    - cron: '0 0 * * *'
 permissions:
   contents: read
   security-events: write
