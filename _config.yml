@@ -1,2 +1,7 @@
+title: "standard_react_fastapi_environment"
+description: "a full-stack development environment"
+baseurl: "/standard_react_fastapi_environment" # サブディレクトリ公開なら "/repo名" を指定
+url: "https://europanite.github.io"
+theme: minima
 plugins:
   - jekyll-sitemap
