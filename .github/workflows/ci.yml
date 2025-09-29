@@ -56,7 +56,7 @@ jobs:
         run: mkdir -p reports/backend
       - name: Run service tests
         run: |
-          docker compose -f docker-compose.test.yml run --rm   --entrypoint /bin/sh service_test -lc '
+          docker compose -f docker-compose.test.yml run --rm   --entrypoint /bin/sh backend_test -lc '
               python -m coverage run -m pytest -q
             '
       - name: Upload coverage xml
