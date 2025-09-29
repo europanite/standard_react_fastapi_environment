@@ -53,18 +53,17 @@ jobs:
         run: |
           gunzip -c backend-test.tar.gz | docker load
       - name: Prepare report dir on host (mounted into /reports)
-        run: mkdir -p reports/backend/ci
+        run: mkdir -p reports/backend
       - name: Run service tests
         run: |
-          docker compose -f docker-compose.test.yml run --rm   --entrypoint /bin/sh backend_test -lc '
-              python -m coverage run -m pytest -q --maxfail=1 -o cache_dir=/tmp/pytest-cache
-              python -m coverage xml -o /reports/backend/ci/coverage.xml
+          docker compose -f docker-compose.test.yml run --rm   --entrypoint /bin/sh service_test -lc '
+              python -m coverage run -m pytest -q
             '
       - name: Upload coverage xml
         uses: actions/upload-artifact@v4
         with:
           name: coverage-xml
-          path: service/reports/ci/coverage.xml
+          path: service/reports/coverage.xml
           if-no-files-found: error
 
   frontend-tests:
