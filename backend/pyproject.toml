@@ -10,5 +10,3 @@ ignore = [
   "B008"
 ]
 
-[tool.ruff.lint.isort]
-known-first-party = ["app"]
