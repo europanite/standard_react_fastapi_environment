@@ -31,7 +31,7 @@ services:
       - ./backend/tests:/tests
       - ./backend/pytest.ini:/app/pytest.ini:ro
       - ./reports/backend:/reports/backend
-    command: ["pytest", "-q", "--maxfail=1"]
+    command: ["pytest", "-q"]
   frontend_test:
     container_name: frontend_test
     build:

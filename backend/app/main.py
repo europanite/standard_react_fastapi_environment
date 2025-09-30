@@ -14,7 +14,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="CRUD APIs", lifespan=lifespan)
+app = FastAPI(title="APIs", lifespan=lifespan)
 
 # CORS for development
 app.add_middleware(
