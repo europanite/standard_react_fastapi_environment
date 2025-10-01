@@ -56,7 +56,6 @@ jobs:
         run: |
           docker compose -f docker-compose.test.yml run --rm   --entrypoint /bin/sh backend_test -lc '
               python -m coverage run -m pytest -q
-              python -m coverage xml -o /reports/ci/coverage.xml
             '
       - name: show reports (host)
         run: |
