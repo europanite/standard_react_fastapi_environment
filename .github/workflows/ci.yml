@@ -58,11 +58,18 @@ jobs:
               python -m coverage run -m pytest -q
               python -m coverage xml -o /reports/ci/coverage.xml
             '
+      - name: show reports (host)
+        run: |
+          ls -lah .
+          ls -lah backend
+          ls -lah backend/reports
+          ls -lah backend/reports/ci
+          ls -lah backend/reports/ci/coverage.xml
       - name: Upload coverage xml
         uses: actions/upload-artifact@v4
         with:
           name: coverage-xml
-          path: /reports/ci/coverage.xml
+          path: backend/reports/ci/coverage.xml
           if-no-files-found: error
 
   frontend-tests:
