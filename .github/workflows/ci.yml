@@ -57,13 +57,6 @@ jobs:
           docker compose -f docker-compose.test.yml run --rm   --entrypoint /bin/sh backend_test -lc '
               python -m coverage run -m pytest -q
             '
-      - name: show reports (host)
-        run: |
-          ls -lah .
-          ls -lah backend
-          ls -lah backend/reports
-          ls -lah backend/reports/ci
-          ls -lah backend/reports/ci/coverage.xml
       - name: Upload coverage xml
         uses: actions/upload-artifact@v4
         with:
