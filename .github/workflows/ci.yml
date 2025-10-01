@@ -65,6 +65,7 @@ jobs:
           ls -lah backend/reports
           ls -lah backend/reports/ci
           ls -lah backend/reports/ci/coverage.xml
+          ls -lah /reports
       - name: Upload coverage xml
         uses: actions/upload-artifact@v4
         with:
