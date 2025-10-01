@@ -52,8 +52,6 @@ jobs:
       - name: Load images
         run: |
           gunzip -c backend-test.tar.gz | docker load
-      - name: Prepare report dir on host (mounted into /reports)
-        run: mkdir -p reports/backend
       - name: Run service tests
         run: |
           docker compose -f docker-compose.test.yml run --rm   --entrypoint /bin/sh backend_test -lc '
