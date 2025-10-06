@@ -11,8 +11,8 @@
 - **Frontend**: [Expo](https://expo.dev/) (React Native + TypeScript)  
   - Runs on **Web, Android, and iOS** with a single codebase
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
-- **Database**: PostgreSQL  
-- **Container**: Docker Compose for consistent development setup
+- **Database**: [PostgreSQL](https://www.postgresql.org/)
+- **Container**: [Docker Compose](https://docs.docker.com/compose/) for consistent development setup
 
 ---
 
