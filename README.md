@@ -72,5 +72,13 @@ docker compose up
 !["expo"](./assets/images/expo.png)
 
 ---
+### 4. Test:
+
+```bash
+docker compose -f docker-compose.test.yml run --rm --entrypoint /bin/sh service_test -lc ' pytest -q '
+```
+
+---
+
 # License
 - Apache License 2.0
