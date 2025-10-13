@@ -9,7 +9,7 @@
 
 **full-stack development environment** using:
 
-- **Frontend**: [Expo](https://expo.dev/) (React Native + TypeScript)  
+- **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
   - Runs on **Web, Android, and iOS** with a single codebase
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
@@ -23,30 +23,15 @@
   - Runs as a **web app** or on **Android/iOS devices** via Expo Go or standalone builds
 - **CRUD operations** : Create, Read, Update, Delete records
 - **Auth operations** : Signup, Signin, Signout
-- **FastAPI backend** with automatic docs at [/docs](http://localhost:8000/docs)  
+- **FastAPI backend** with automatic docs
   - REST API with Swagger UI (/docs)
-
----
-
-## 📦 Services
-
-- **backend**: FastAPI + SQLAlchemy  
-  - Port: `8000`  
-  - API Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
-
-- **frontend**: React Native (Expo Web)  
-  - Port: `8081`  
-  - Web UI: [http://localhost:8081](http://localhost:8081)
-
-- **db**: PostgreSQL  
-  - Port: `5432`  
 
 ---
 
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
-- Docker & Docker Compose
+- [Docker](https://www.docker.com/) & [Docker Compose](https://docs.docker.com/compose/)
 - Expo Go app (for Android/iOS testing)
 
 ### 2. Build and start all services:
