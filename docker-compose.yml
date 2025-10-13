@@ -57,7 +57,6 @@ services:
       EXPO_PUBLIC_API_HOST: ${EXPO_PUBLIC_API_HOST}
       EXPO_PUBLIC_API_PORT: ${EXPO_PUBLIC_API_PORT}
       EXPO_PUBLIC_API_BASE: ${EXPO_PUBLIC_API_BASE}
-    # Expo/Metro
     ports:
       - "19000:19000"  # Expo dev server (Metro)
       - "19001:19001"  # React Native debugger(old)
