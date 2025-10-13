@@ -9,7 +9,7 @@
 
 **full-stack development environment** using:
 
-- **Frontend**: [Expo](https://expo.dev/) (React Native + TypeScript)  
+- **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
   - Runs on **Web, Android, and iOS** with a single codebase
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
