@@ -60,7 +60,11 @@ docker compose up
 ### 4. Test:
 
 ```bash
-docker compose -f docker-compose.test.yml run --rm --entrypoint /bin/sh service_test -lc ' pytest -q '
+docker compose \
+  -f docker-compose.test.yml run \
+  --rm \
+  --entrypoint /bin/sh service_test \
+  -lc ' pytest -q '
 ```
 
 ---
