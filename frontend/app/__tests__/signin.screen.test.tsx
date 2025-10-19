@@ -18,7 +18,7 @@ beforeEach(() => {
   mockNavigate.mockClear();
 });
 
-test('入力→Sign In→Home 遷移', async () => {
+test('Sign In to Home ', async () => {
   render(<SignInScreen />);
   fireEvent.changeText(screen.getByTestId('email'), ' user@example.com ');
   fireEvent.changeText(screen.getByTestId('password'), 'pw');
