@@ -31,7 +31,7 @@
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
-- [Docker](https://www.docker.com/) & [Docker Compose](https://docs.docker.com/compose/)
+- [Docker Compose](https://docs.docker.com/compose/)
 - [Expo Go](https://expo.dev/go) (for Android/iOS testing)
 
 ### 2. Build and start all services:
