@@ -47,17 +47,9 @@ docker compose build
 docker compose up
 ```
 
-### 3. Visit the services:
-
-- Backend API: http://localhost:8000/docs
-!["backend"](./assets/images/backend.png)
-
-- Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${YOUR_HOST}:8081: access it with the QR provided by Expo.
-!["expo"](./assets/images/expo.png)
-
 ---
-### 4. Test:
+
+### 3. Test:
 
 ```bash
 docker compose \
@@ -66,6 +58,17 @@ docker compose \
   --entrypoint /bin/sh service_test \
   -lc ' pytest -q '
 ```
+
+---
+
+### 4. Visit the services:
+
+- Backend API: http://localhost:8000/docs
+!["backend"](./assets/images/backend.png)
+
+- Frontend UI (WEB): http://localhost:8081
+- Frontend UI (mobile): exp://${YOUR_HOST}:8081: access it with the QR provided by Expo.
+!["expo"](./assets/images/expo.png)
 
 ---
 
