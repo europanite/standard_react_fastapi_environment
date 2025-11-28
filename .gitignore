@@ -48,6 +48,7 @@ desktop.ini
 
 # coverage reports (backend & frontend)
 coverage/
+backend/reports/
 backend/app/coverage/
 frontend/app/coverage/
 
