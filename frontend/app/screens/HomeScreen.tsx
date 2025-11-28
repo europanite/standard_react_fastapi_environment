@@ -1,8 +1,6 @@
 // CRUD Home screen
-// - Matches SignIn/SignUp/SettingsBar layout: centered content with max width (480px).
 // - Allows typing while signed out, but blocks submitting (CREATE/UPDATE/DELETE) and nudges to SignIn.
 // - Keeps the original CRUD UI structure as much as possible.
-
 import React, { useEffect, useState } from "react";
 import {
   View,
@@ -18,7 +16,7 @@ import { useAuth } from "../context/Auth";
 
 type Item = { id: number; title: string };
 
-const CONTENT_MAX_W = 480; // keep consistent with SignIn/SignUp/SettingsBar
+const CONTENT_MAX_W = 720;
 
 // Resolve API base: prefer EXPO_PUBLIC_API_BASE; fallback for dev environments.
 const API_BASE =

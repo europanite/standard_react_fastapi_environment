@@ -38,7 +38,7 @@
 
 ```bash
 # set environment variables:
-export REACT_NATIVE_PACKAGER_HOSTNAME=${YOUR_HOST}
+export REACT_NATIVE_PACKAGER_HOSTNAME=192.168.3.6
 
 # Build the image
 docker compose build
@@ -52,11 +52,17 @@ docker compose up
 ### 3. Test:
 
 ```bash
+# Backend Test
 docker compose \
   -f docker-compose.test.yml run \
   --rm \
-  --entrypoint /bin/sh service_test \
+  --entrypoint /bin/sh backend_test \
   -lc ' pytest -q '
+
+# Frontend Test
+docker compose \
+  -f docker-compose.test.yml run \
+  --rm frontend_test
 ```
 
 ---

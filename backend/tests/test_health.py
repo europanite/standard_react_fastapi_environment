@@ -1,4 +1,3 @@
-# backend/tests/test_health.py
 from http import HTTPStatus
 
 from fastapi.testclient import TestClient
