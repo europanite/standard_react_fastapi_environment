@@ -1,5 +1,3 @@
-// Simple auth context that stores token/email in memory.
-// You can later persist it with AsyncStorage if needed.
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 type User = { email: string } | null;

@@ -1,6 +1,5 @@
-// Settings bar: match SignIn/SignUp layout (centered column, maxWidth=480).
+// Settings bar: match SignIn/SignUp layout
 // - Bar spans full width with gray background.
-// - Inner content is centered and width-limited to 480px (same as forms).
 // - Status + buttons are grouped without stretching to edges.
 
 import React from "react";
@@ -11,7 +10,7 @@ import { useAuth } from "../context/Auth";
 import { useNavigation } from "@react-navigation/native";
 
 const BAR_BG = "#000000ff";
-const CONTENT_MAX_W = 480; // ← same as forms
+const CONTENT_MAX_W = 720;
 
 export default function SettingsBar() {
   const { user, signOut } = useAuth();

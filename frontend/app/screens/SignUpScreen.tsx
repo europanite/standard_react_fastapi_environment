@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button } from "react-native";
 import { useAuth } from "../context/Auth";
 import { useNavigation } from "@react-navigation/native";
 
-const FORM_MAX_W = 480; // limit form width on wide screens
+const FORM_MAX_W = 720;
 
 export default function SignUpScreen() {
   const { signUp } = useAuth();
