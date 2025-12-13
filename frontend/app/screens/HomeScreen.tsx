@@ -10,6 +10,7 @@ import {
   FlatList,
   TouchableOpacity,
   Platform,
+  Linking,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useAuth } from "../context/Auth";
@@ -137,6 +138,7 @@ export default function HomeScreen() {
     });
 
   const submitDisabled = !auth.user;
+  const REPO_URL = "https://github.com/europanite/standard_react_fastapi_environment"
 
   return (
     <View style={{ flex: 1, padding: 16 }}>
@@ -144,8 +146,17 @@ export default function HomeScreen() {
       <View style={{ alignItems: "center" }}>
         {/* --- FORM: centered & width-limited --- */}
         <View style={{ width: "100%", maxWidth: CONTENT_MAX_W }}>
-          <Text style={{ fontSize: 22, fontWeight: "700", marginBottom: 12 }}>
-            Auth CRUD Sample
+          <Text
+            style={{
+              color: "#000000ff",
+              fontSize: 24,
+              fontWeight: "700", 
+              marginBottom: 12,
+              textDecorationLine: "underline",
+            }}
+              onPress={() => Linking.openURL(REPO_URL)}
+          >
+              Standard React FastAPI Environment
           </Text>
 
           {err && (
