@@ -32,6 +32,7 @@
 
 !["web_ui"](./assets/images/web_ui.png)
 
+
 **Full-Stack-Entwicklungsumgebung** mit:
 
 - **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
