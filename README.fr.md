@@ -1,3 +1,8 @@
+<!-- Language Switcher -->
+[English](README.md) | [हिन्दी](README.hi.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [한국어](README.ko.md) | [Deutsch](README.de.md) | [Français](README.fr.md)
+
+> Ce README est une traduction du README original en anglais. En cas de différence, la version anglaise fait foi.
+
 # [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React FastAPI Environment")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -29,26 +34,24 @@
 </p>
 
 !["web_ui"](./assets/images/web_ui.png)
-
-
-**full-stack development environment** using:
+**Environnement de développement full-stack** utilisant :
 
 - **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
-  - Runs on **Web, Android, and iOS** with a single codebase
+  - Fonctionne sur **Web, Android et iOS** avec une seule codebase
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
-- **Container**: [Docker Compose](https://docs.docker.com/compose/) for consistent development setup
+- **Container**: [Docker Compose](https://docs.docker.com/compose/) pour un environnement de développement cohérent
 
 ---
 
 ## Features
 
-- **Cross-platform frontend** with Expo  
-  - Runs as a **web app** or on **Android/iOS devices** via Expo Go or standalone builds
-- **CRUD operations** : Create, Read, Update, Delete records
+- **Frontend cross-platform** avec Expo  
+  - Fonctionne comme **web app** ou sur **Android/iOS devices** via Expo Go ou standalone builds
+- **CRUD operations** : créer, lire, mettre à jour et supprimer des records
 - **Auth operations** : Signup, Signin, Signout
-- **FastAPI backend** with automatic docs
-  - REST API with Swagger UI (/docs)
+- **FastAPI backend** avec automatic docs
+  - REST API avec Swagger UI (/docs)
 
 ---
 
@@ -56,9 +59,9 @@
 
 ### 1. Prerequisites
 - [Docker Compose](https://docs.docker.com/compose/)
-- [Expo Go](https://expo.dev/go) (for Android/iOS testing)
+- [Expo Go](https://expo.dev/go) (pour Android/iOS testing)
 
-### 2. Build and start all services:
+### 2. Build et start de tous les services:
 
 ```bash
 # set environment variables:
@@ -98,13 +101,13 @@ docker compose \
 
 ---
 
-### 4. Visit the services:
+### 4. Accéder aux services:
 
 - Backend API: http://localhost:8000/docs
 !["backend"](./assets/images/backend.png)
 
 - Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${YOUR_HOST}:8081: access it with the QR provided by Expo.
+- Frontend UI (mobile): exp://${YOUR_HOST}:8081: accédez-y avec le QR fourni par Expo.
 !["expo"](./assets/images/expo.png)
 
 ---

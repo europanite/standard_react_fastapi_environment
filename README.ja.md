@@ -1,3 +1,8 @@
+<!-- Language Switcher -->
+[English](README.md) | [हिन्दी](README.hi.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [한국어](README.ko.md) | [Deutsch](README.de.md) | [Français](README.fr.md)
+
+> この README は英語版 README の翻訳です。内容に差異がある場合は、英語版を正式な情報源とします。
+
 # [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React FastAPI Environment")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -29,26 +34,24 @@
 </p>
 
 !["web_ui"](./assets/images/web_ui.png)
+次の技術を使用した **フルスタック開発環境** です。
 
-
-**full-stack development environment** using:
-
-- **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
-  - Runs on **Web, Android, and iOS** with a single codebase
-- **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
+- **Frontend**: [Expo](https://expo.dev/)（[React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/)）  
+  - 単一の codebase で **Web、Android、iOS** に対応
+- **Backend**: [FastAPI](https://fastapi.tiangolo.com/)（Python）  
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
-- **Container**: [Docker Compose](https://docs.docker.com/compose/) for consistent development setup
+- **Container**: 一貫した開発環境を構築するための [Docker Compose](https://docs.docker.com/compose/)
 
 ---
 
 ## Features
 
-- **Cross-platform frontend** with Expo  
-  - Runs as a **web app** or on **Android/iOS devices** via Expo Go or standalone builds
-- **CRUD operations** : Create, Read, Update, Delete records
-- **Auth operations** : Signup, Signin, Signout
-- **FastAPI backend** with automatic docs
-  - REST API with Swagger UI (/docs)
+- Expo による **クロスプラットフォーム frontend**  
+  - **web app** として実行でき、Expo Go または standalone builds を使って **Android/iOS devices** でも動作
+- **CRUD operations** : records の作成、読み取り、更新、削除
+- **Auth operations** : Signup、Signin、Signout
+- automatic docs を備えた **FastAPI backend**
+  - Swagger UI (/docs) による REST API
 
 ---
 
@@ -56,9 +59,9 @@
 
 ### 1. Prerequisites
 - [Docker Compose](https://docs.docker.com/compose/)
-- [Expo Go](https://expo.dev/go) (for Android/iOS testing)
+- [Expo Go](https://expo.dev/go)（Android/iOS testing 用）
 
-### 2. Build and start all services:
+### 2. すべての services を build して start する:
 
 ```bash
 # set environment variables:
@@ -98,13 +101,13 @@ docker compose \
 
 ---
 
-### 4. Visit the services:
+### 4. services にアクセスする:
 
 - Backend API: http://localhost:8000/docs
 !["backend"](./assets/images/backend.png)
 
 - Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${YOUR_HOST}:8081: access it with the QR provided by Expo.
+- Frontend UI (mobile): exp://${YOUR_HOST}:8081: Expo が表示する QR からアクセスします。
 !["expo"](./assets/images/expo.png)
 
 ---

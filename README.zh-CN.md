@@ -1,3 +1,8 @@
+<!-- Language Switcher -->
+[English](README.md) | [हिन्दी](README.hi.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [한국어](README.ko.md) | [Deutsch](README.de.md) | [Français](README.fr.md)
+
+> 本 README 是英文版 README 的翻译版本。如有差异，请以英文版作为权威来源。
+
 # [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React FastAPI Environment")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -29,26 +34,24 @@
 </p>
 
 !["web_ui"](./assets/images/web_ui.png)
+使用以下技术构建的 **全栈开发环境**：
 
-
-**full-stack development environment** using:
-
-- **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
-  - Runs on **Web, Android, and iOS** with a single codebase
-- **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
+- **Frontend**: [Expo](https://expo.dev/)（[React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/)）  
+  - 使用单一 codebase 运行在 **Web、Android 和 iOS** 上
+- **Backend**: [FastAPI](https://fastapi.tiangolo.com/)（Python）  
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
-- **Container**: [Docker Compose](https://docs.docker.com/compose/) for consistent development setup
+- **Container**: 使用 [Docker Compose](https://docs.docker.com/compose/) 保持一致的开发环境
 
 ---
 
 ## Features
 
-- **Cross-platform frontend** with Expo  
-  - Runs as a **web app** or on **Android/iOS devices** via Expo Go or standalone builds
-- **CRUD operations** : Create, Read, Update, Delete records
-- **Auth operations** : Signup, Signin, Signout
-- **FastAPI backend** with automatic docs
-  - REST API with Swagger UI (/docs)
+- 基于 Expo 的 **跨平台 frontend**  
+  - 可作为 **web app** 运行，也可通过 Expo Go 或 standalone builds 在 **Android/iOS devices** 上运行
+- **CRUD operations** : 创建、读取、更新、删除 records
+- **Auth operations** : Signup、Signin、Signout
+- 带 automatic docs 的 **FastAPI backend**
+  - 提供 Swagger UI (/docs) 的 REST API
 
 ---
 
@@ -56,9 +59,9 @@
 
 ### 1. Prerequisites
 - [Docker Compose](https://docs.docker.com/compose/)
-- [Expo Go](https://expo.dev/go) (for Android/iOS testing)
+- [Expo Go](https://expo.dev/go)（用于 Android/iOS testing）
 
-### 2. Build and start all services:
+### 2. Build 并 start 所有 services:
 
 ```bash
 # set environment variables:
@@ -98,13 +101,13 @@ docker compose \
 
 ---
 
-### 4. Visit the services:
+### 4. 访问 services:
 
 - Backend API: http://localhost:8000/docs
 !["backend"](./assets/images/backend.png)
 
 - Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${YOUR_HOST}:8081: access it with the QR provided by Expo.
+- Frontend UI (mobile): exp://${YOUR_HOST}:8081: 使用 Expo 提供的 QR 访问。
 !["expo"](./assets/images/expo.png)
 
 ---

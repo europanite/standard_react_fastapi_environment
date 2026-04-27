@@ -1,3 +1,8 @@
+<!-- Language Switcher -->
+[English](README.md) | [हिन्दी](README.hi.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [한국어](README.ko.md) | [Deutsch](README.de.md) | [Français](README.fr.md)
+
+> 이 README는 영어 원본 README의 번역본입니다. 차이가 있을 경우 영어 버전을 공식 기준으로 합니다.
+
 # [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React FastAPI Environment")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -29,26 +34,24 @@
 </p>
 
 !["web_ui"](./assets/images/web_ui.png)
-
-
-**full-stack development environment** using:
+다음 기술을 사용하는 **풀스택 개발 환경**입니다.
 
 - **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
-  - Runs on **Web, Android, and iOS** with a single codebase
+  - 단일 codebase로 **Web, Android, iOS**에서 실행됩니다
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
-- **Container**: [Docker Compose](https://docs.docker.com/compose/) for consistent development setup
+- **Container**: 일관된 개발 환경 구성을 위한 [Docker Compose](https://docs.docker.com/compose/)
 
 ---
 
 ## Features
 
-- **Cross-platform frontend** with Expo  
-  - Runs as a **web app** or on **Android/iOS devices** via Expo Go or standalone builds
-- **CRUD operations** : Create, Read, Update, Delete records
+- Expo 기반 **크로스 플랫폼 frontend**  
+  - **web app**으로 실행하거나 Expo Go 또는 standalone builds를 통해 **Android/iOS devices**에서 실행할 수 있습니다
+- **CRUD operations** : records 생성, 읽기, 업데이트, 삭제
 - **Auth operations** : Signup, Signin, Signout
-- **FastAPI backend** with automatic docs
-  - REST API with Swagger UI (/docs)
+- automatic docs를 제공하는 **FastAPI backend**
+  - Swagger UI (/docs)를 포함한 REST API
 
 ---
 
@@ -56,9 +59,9 @@
 
 ### 1. Prerequisites
 - [Docker Compose](https://docs.docker.com/compose/)
-- [Expo Go](https://expo.dev/go) (for Android/iOS testing)
+- [Expo Go](https://expo.dev/go) (Android/iOS testing용)
 
-### 2. Build and start all services:
+### 2. 모든 services를 build하고 start합니다:
 
 ```bash
 # set environment variables:
@@ -98,13 +101,13 @@ docker compose \
 
 ---
 
-### 4. Visit the services:
+### 4. services에 접속합니다:
 
 - Backend API: http://localhost:8000/docs
 !["backend"](./assets/images/backend.png)
 
 - Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${YOUR_HOST}:8081: access it with the QR provided by Expo.
+- Frontend UI (mobile): exp://${YOUR_HOST}:8081: Expo가 제공하는 QR로 접속합니다.
 !["expo"](./assets/images/expo.png)
 
 ---
