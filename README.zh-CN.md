@@ -16,6 +16,7 @@
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 ![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)
 
+
 <p align="right">
   <a href="./README.md">🇺🇸 English</a> |
   <a href="./README.hi.md">🇮🇳 हिंदी</a> |
@@ -27,6 +28,7 @@
   <a href="./README.de.md">🇩🇪 Deutsch</a> |
   <a href="./README.fr.md">🇫🇷 Français</a>
 </p>
+
 
 !["web_ui"](./assets/images/web_ui.png)
 使用以下技术构建的 **全栈开发环境**：
