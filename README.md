@@ -72,7 +72,7 @@ lang: en
 
 ```bash
 # set environment variables:
-export REACT_NATIVE_PACKAGER_HOSTNAME=192.168.3.6
+export REACT_NATIVE_PACKAGER_HOSTNAME=${YOUR_HOST}
 
 # Build the image
 docker compose build
