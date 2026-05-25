@@ -37,9 +37,7 @@ lang: ko
   <a href="https://europanite.github.io/standard_react_fastapi_environment/fr/">🇫🇷 Français</a>
 </p>
 
-> 이 문서는 `README.md`의 번역본입니다. 영어 버전이 원본이자 기준입니다.
-
-!["mobile_ui"](./assets/images/mobile_ui.png)
+<img src="./assets/images/mobile_ui.png" alt="Expo mobile screenshot" width="320" />
 
 !["web_ui"](./assets/images/web_ui.png)
 

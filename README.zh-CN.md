@@ -37,9 +37,7 @@ lang: zh-CN
   <a href="https://europanite.github.io/standard_react_fastapi_environment/fr/">🇫🇷 Français</a>
 </p>
 
-> 这是 `README.md` 的翻译版本。英文版本是唯一可信来源。
-
-!["mobile_ui"](./assets/images/mobile_ui.png)
+<img src="./assets/images/mobile_ui.png" alt="Expo mobile screenshot" width="320" />
 
 !["web_ui"](./assets/images/web_ui.png)
 

@@ -37,7 +37,7 @@ lang: en
   <a href="https://europanite.github.io/standard_react_fastapi_environment/fr/">🇫🇷 Français</a>
 </p>
 
-!["mobile_ui"](./assets/images/mobile_ui.png)
+<img src="./assets/images/mobile_ui.png" alt="Expo mobile screenshot" width="320" />
 
 !["web_ui"](./assets/images/web_ui.png)
 
