@@ -5,7 +5,7 @@ permalink: /es/
 lang: es
 ---
 
-# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Expo React Native + FastAPI Backend Starter")
+# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Starter Container for Expo React Native + FastAPI")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![OS](https://img.shields.io/badge/OS-Linux%20%7C%20macOS%20%7C%20Windows-blue)
