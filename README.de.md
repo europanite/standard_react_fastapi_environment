@@ -37,9 +37,12 @@ lang: de
   <a href="https://europanite.github.io/standard_react_fastapi_environment/fr/">🇫🇷 Français</a>
 </p>
 
+**Mobile UI**
 <img src="./assets/images/mobile_ui.png" alt="Expo mobile screenshot" width="320" />
 
+**Web UI**
 !["web_ui"](./assets/images/web_ui.png)
+
 
 Ein sofort ausführbarer full-stack starter container, der eine Expo React Native app mit einem FastAPI backend verbindet.
 
