@@ -1,15 +1,15 @@
 ---
 layout: page
-title: "🇨🇳 中文"
+title: "🇨🇳 简体中文"
 permalink: /zh-CN/
 lang: zh-CN
 ---
 
-# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React FastAPI Environment")
+# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Expo React Native + FastAPI Backend Starter")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![OS](https://img.shields.io/badge/OS-Linux%20%7C%20macOS%20%7C%20Windows-blue)
-[![Python](https://img.shields.io/badge/python-3.9|%203.10%20|%203.11|%203.12|%203.13-blue)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/python-3.10%20|%203.11|%203.12|%203.13-blue)](https://www.python.org/)
 
 [![CI](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml/badge.svg)](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml)
 [![Python Lint](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/lint.yml/badge.svg)](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/lint.yml)
@@ -37,28 +37,36 @@ lang: zh-CN
   <a href="https://europanite.github.io/standard_react_fastapi_environment/fr/">🇫🇷 Français</a>
 </p>
 
+> 这是 `README.md` 的翻译版本。英文版本是唯一可信来源。
+
+!["mobile_ui"](./assets/images/mobile_ui.png)
 
 !["web_ui"](./assets/images/web_ui.png)
 
+一个开箱即用的 full-stack starter container，用于将 Expo React Native app 连接到 FastAPI backend。
 
-使用以下技术构建的 **全栈开发环境**：
+该 template 包含 Expo React Native frontend、FastAPI backend、PostgreSQL、JWT authentication、CRUD APIs、Docker Compose、backend tests、frontend tests，以及 GitHub Actions CI。
 
-- **Frontend**: [Expo](https://expo.dev/)（[React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/)）  
+当你想使用 Expo 构建 mobile 或 web app，并将其连接到 FastAPI backend 时，可以使用这个 repository。
+
+**full-stack development environment** 使用:
+
+- **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
   - 使用单一 codebase 运行在 **Web、Android 和 iOS** 上
-- **Backend**: [FastAPI](https://fastapi.tiangolo.com/)（Python）  
+- **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
-- **Container**: 使用 [Docker Compose](https://docs.docker.com/compose/) 保持一致的开发环境
+- **Container**: 使用 [Docker Compose](https://docs.docker.com/compose/) 保持一致的 development setup
 
 ---
 
 ## Features
 
-- 基于 Expo 的 **跨平台 frontend**  
-  - 可作为 **web app** 运行，也可通过 Expo Go 或 standalone builds 在 **Android/iOS devices** 上运行
+- 基于 Expo 的 **Cross-platform frontend**  
+  - 可作为 **web app** 运行，也可通过 Expo Go 或 standalone builds 运行在 **Android/iOS devices** 上
 - **CRUD operations** : 创建、读取、更新、删除 records
 - **Auth operations** : Signup、Signin、Signout
-- 带 automatic docs 的 **FastAPI backend**
-  - 提供 Swagger UI (/docs) 的 REST API
+- 带有 automatic docs 的 **FastAPI backend**
+  - `/api/v1` 下的 versioned REST API，并提供 Swagger UI (`/docs`)
 
 ---
 
@@ -66,10 +74,9 @@ lang: zh-CN
 
 ### 1. Prerequisites
 - [Docker Compose](https://docs.docker.com/compose/)
-- [Expo Go](https://expo.dev/go)（用于 Android/iOS testing）
+- [Expo Go](https://expo.dev/go) (用于 Android/iOS testing)
 
 ### 2. Build 并 start 所有 services:
-
 ```bash
 # set environment variables:
 export REACT_NATIVE_PACKAGER_HOSTNAME=${YOUR_HOST}
@@ -80,7 +87,6 @@ docker compose build
 # Run the container
 docker compose up
 ```
-
 ---
 
 ### 3. Test:
@@ -114,7 +120,7 @@ docker compose \
 !["backend"](./assets/images/backend.png)
 
 - Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${YOUR_HOST}:8081: 使用 Expo 提供的 QR 访问。
+- Frontend UI (mobile): exp://${YOUR_HOST}:8081: 使用 Expo 提供的 QR 进行 access。
 !["expo"](./assets/images/expo.png)
 
 ---

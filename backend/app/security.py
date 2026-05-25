@@ -1,22 +1,23 @@
 import datetime as dt
 import os
 
+import bcrypt
 from jose import jwt
-from passlib.context import CryptContext
 
 SECRET_KEY = os.getenv("AUTH_SECRET", "dev-secret")
 ALGO = "HS256"
 EXPIRE_MIN = int(os.getenv("AUTH_EXPIRE_MINUTES", "60"))
 
-pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
 
 def hash_password(pw: str) -> str:
-    return pwd_ctx.hash(pw)
+    return bcrypt.hashpw(pw.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
 
 
 def verify_password(pw: str, hashed: str) -> bool:
-    return pwd_ctx.verify(pw, hashed)
+    try:
+        return bcrypt.checkpw(pw.encode("utf-8"), hashed.encode("utf-8"))
+    except ValueError:
+        return False
 
 
 def create_access_token(sub: str) -> str:

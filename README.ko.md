@@ -5,11 +5,11 @@ permalink: /ko/
 lang: ko
 ---
 
-# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React FastAPI Environment")
+# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Expo React Native + FastAPI Backend Starter")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![OS](https://img.shields.io/badge/OS-Linux%20%7C%20macOS%20%7C%20Windows-blue)
-[![Python](https://img.shields.io/badge/python-3.9|%203.10%20|%203.11|%203.12|%203.13-blue)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/python-3.10%20|%203.11|%203.12|%203.13-blue)](https://www.python.org/)
 
 [![CI](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml/badge.svg)](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml)
 [![Python Lint](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/lint.yml/badge.svg)](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/lint.yml)
@@ -37,28 +37,36 @@ lang: ko
   <a href="https://europanite.github.io/standard_react_fastapi_environment/fr/">🇫🇷 Français</a>
 </p>
 
+> 이 문서는 `README.md`의 번역본입니다. 영어 버전이 원본이자 기준입니다.
+
+!["mobile_ui"](./assets/images/mobile_ui.png)
 
 !["web_ui"](./assets/images/web_ui.png)
 
+Expo React Native app을 FastAPI backend에 연결하기 위한, 바로 실행 가능한 full-stack starter container입니다.
 
-다음 기술을 사용하는 **풀스택 개발 환경**입니다.
+이 template에는 Expo React Native frontend, FastAPI backend, PostgreSQL, JWT authentication, CRUD APIs, Docker Compose, backend tests, frontend tests, GitHub Actions CI가 포함되어 있습니다.
+
+Expo로 mobile 또는 web app을 만들고 FastAPI backend에 연결하려는 경우 이 repository를 사용하세요.
+
+**full-stack development environment** 구성:
 
 - **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
   - 단일 codebase로 **Web, Android, iOS**에서 실행됩니다
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
-- **Container**: 일관된 개발 환경 구성을 위한 [Docker Compose](https://docs.docker.com/compose/)
+- **Container**: 일관된 development setup을 위한 [Docker Compose](https://docs.docker.com/compose/)
 
 ---
 
 ## Features
 
-- Expo 기반 **크로스 플랫폼 frontend**  
+- Expo 기반 **Cross-platform frontend**  
   - **web app**으로 실행하거나 Expo Go 또는 standalone builds를 통해 **Android/iOS devices**에서 실행할 수 있습니다
 - **CRUD operations** : records 생성, 읽기, 업데이트, 삭제
 - **Auth operations** : Signup, Signin, Signout
 - automatic docs를 제공하는 **FastAPI backend**
-  - Swagger UI (/docs)를 포함한 REST API
+  - `/api/v1` 아래의 versioned REST API와 Swagger UI (`/docs`)
 
 ---
 
@@ -69,7 +77,6 @@ lang: ko
 - [Expo Go](https://expo.dev/go) (Android/iOS testing용)
 
 ### 2. 모든 services를 build하고 start합니다:
-
 ```bash
 # set environment variables:
 export REACT_NATIVE_PACKAGER_HOSTNAME=${YOUR_HOST}
@@ -80,7 +87,6 @@ docker compose build
 # Run the container
 docker compose up
 ```
-
 ---
 
 ### 3. Test:
@@ -108,13 +114,13 @@ docker compose \
 
 ---
 
-### 4. services에 접속합니다:
+### 4. Services 접속:
 
 - Backend API: http://localhost:8000/docs
 !["backend"](./assets/images/backend.png)
 
 - Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${YOUR_HOST}:8081: Expo가 제공하는 QR로 접속합니다.
+- Frontend UI (mobile): exp://${YOUR_HOST}:8081: Expo가 제공하는 QR로 access하세요.
 !["expo"](./assets/images/expo.png)
 
 ---

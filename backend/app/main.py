@@ -14,6 +14,8 @@ async def lifespan(app: FastAPI):
     yield
 
 
+API_V1_PREFIX = "/api/v1"
+
 app = FastAPI(title="APIs", lifespan=lifespan)
 
 # CORS for development
@@ -32,5 +34,5 @@ def health():
     return {"status": "ok", "db": ok}
 
 
-app.include_router(items.router)
-app.include_router(auth.router)
+app.include_router(items.router, prefix=API_V1_PREFIX)
+app.include_router(auth.router, prefix=API_V1_PREFIX)

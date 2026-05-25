@@ -5,11 +5,11 @@ permalink: /
 lang: en
 ---
 
-# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React FastAPI Environment")
+# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Expo React Native + FastAPI Backend Starter")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![OS](https://img.shields.io/badge/OS-Linux%20%7C%20macOS%20%7C%20Windows-blue)
-[![Python](https://img.shields.io/badge/python-3.9|%203.10%20|%203.11|%203.12|%203.13-blue)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/python-3.10%20|%203.11|%203.12|%203.13-blue)](https://www.python.org/)
 
 [![CI](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml/badge.svg)](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/ci.yml)
 [![Python Lint](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/lint.yml/badge.svg)](https://github.com/europanite/standard_react_fastapi_environment/actions/workflows/lint.yml)
@@ -37,9 +37,15 @@ lang: en
   <a href="https://europanite.github.io/standard_react_fastapi_environment/fr/">🇫🇷 Français</a>
 </p>
 
+!["mobile_ui"](./assets/images/mobile_ui.png)
 
 !["web_ui"](./assets/images/web_ui.png)
 
+A ready-to-run full-stack starter container for connecting an Expo React Native app to a FastAPI backend.
+
+This template includes an Expo React Native frontend, a FastAPI backend, PostgreSQL, JWT authentication, CRUD APIs, Docker Compose, backend tests, frontend tests, and GitHub Actions CI.
+
+Use this repository when you want to build a mobile or web app with Expo and connect it to a FastAPI backend.
 
 **full-stack development environment** using:
 
@@ -58,7 +64,7 @@ lang: en
 - **CRUD operations** : Create, Read, Update, Delete records
 - **Auth operations** : Signup, Signin, Signout
 - **FastAPI backend** with automatic docs
-  - REST API with Swagger UI (/docs)
+  - Versioned REST API under `/api/v1` with Swagger UI (`/docs`)
 
 ---
 
@@ -80,7 +86,6 @@ docker compose build
 # Run the container
 docker compose up
 ```
-
 ---
 
 ### 3. Test:

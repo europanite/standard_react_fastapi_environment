@@ -8,3 +8,5 @@ def test_openapi_available(client: TestClient):
     assert r.status_code == HTTPStatus.OK
     j = r.json()
     assert "paths" in j and "/health" in j["paths"]
+    assert "/api/v1/items" in j["paths"]
+    assert "/api/v1/auth/signin" in j["paths"]

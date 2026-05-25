@@ -23,10 +23,10 @@ const CONTENT_MAX_W = 720;
 const API_BASE =
   process.env.EXPO_PUBLIC_API_BASE ||
   (Platform.select({
-    web: `http://localhost:${process.env.EXPO_PUBLIC_API_PORT ?? "8000"}`,
+    web: `http://localhost:${process.env.EXPO_PUBLIC_API_PORT ?? "8000"}/api/v1`,
     default: `http://${process.env.EXPO_PUBLIC_API_HOST ?? "localhost"}:${
       process.env.EXPO_PUBLIC_API_PORT ?? "8000"
-    }`,
+    }/api/v1`,
   }) as string);
 
 // Simple JSON helper that throws on non-2xx.
