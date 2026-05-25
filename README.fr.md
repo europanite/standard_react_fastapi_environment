@@ -38,9 +38,11 @@ lang: fr
 </p>
 
 **Mobile UI**
+
 <img src="./assets/images/mobile_ui.png" alt="Expo mobile screenshot" width="320" />
 
 **Web UI**
+
 !["web_ui"](./assets/images/web_ui.png)
 
 

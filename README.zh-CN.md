@@ -38,9 +38,11 @@ lang: zh-CN
 </p>
 
 **Mobile UI**
+
 <img src="./assets/images/mobile_ui.png" alt="Expo mobile screenshot" width="320" />
 
 **Web UI**
+
 !["web_ui"](./assets/images/web_ui.png)
 
 一个开箱即用的 full-stack starter container，用于将 Expo React Native app 连接到 FastAPI backend。
