@@ -5,7 +5,7 @@ permalink: /hi/
 lang: hi
 ---
 
-# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React FastAPI Environment")
+# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Expo React Native + FastAPI Backend Starter")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![OS](https://img.shields.io/badge/OS-Linux%20%7C%20macOS%20%7C%20Windows-blue)
@@ -37,39 +37,46 @@ lang: hi
   <a href="https://europanite.github.io/standard_react_fastapi_environment/fr/">🇫🇷 Français</a>
 </p>
 
+> यह `README.md` का अनुवादित संस्करण है। सत्य का स्रोत अंग्रेज़ी संस्करण है.
+
+!["mobile_ui"](./assets/images/mobile_ui.png)
 
 !["web_ui"](./assets/images/web_ui.png)
 
+चलाने के लिए तैयार full-stack starter container, जो Expo React Native app को FastAPI backend से जोड़ता है।
 
-**फुल-स्टैक डेवलपमेंट वातावरण** जिसमें शामिल हैं:
+इस template में Expo React Native frontend, FastAPI backend, PostgreSQL, JWT authentication, CRUD APIs, Docker Compose, backend tests, frontend tests, और GitHub Actions CI शामिल हैं।
+
+जब आप Expo के साथ mobile या web app बनाना चाहते हैं और उसे FastAPI backend से जोड़ना चाहते हैं, तब इस repository का उपयोग करें।
+
+**full-stack development environment** जिसमें शामिल हैं:
 
 - **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
   - एक ही codebase से **Web, Android, और iOS** पर चलता है
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
-- **Container**: एक समान विकास सेटअप के लिए [Docker Compose](https://docs.docker.com/compose/)
+- **Container**: consistent development setup के लिए [Docker Compose](https://docs.docker.com/compose/)
 
 ---
 
-## सुविधाएँ
+## Features
 
-- Expo के साथ **cross-platform frontend**  
-  - **web app** के रूप में या Expo Go / standalone builds के माध्यम से **Android/iOS devices** पर चलता है
-- **CRUD operations** : records बनाना, पढ़ना, अपडेट करना और हटाना
+- Expo के साथ **Cross-platform frontend**  
+  - Expo Go या standalone builds के माध्यम से **web app** के रूप में या **Android/iOS devices** पर चलता है
+- **CRUD operations** : records बनाना, पढ़ना, update करना, delete करना
 - **Auth operations** : Signup, Signin, Signout
 - automatic docs के साथ **FastAPI backend**
-  - Swagger UI (/docs) वाला REST API
+  - `/api/v1` के अंतर्गत versioned REST API, Swagger UI (`/docs`) के साथ
 
 ---
 
-## 🚀 शुरू करना
+## 🚀 Getting Started
 
-### 1. आवश्यकताएँ
+### 1. Prerequisites
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Expo Go](https://expo.dev/go) (Android/iOS testing के लिए)
 
 ### 2. सभी services build और start करें:
-
 ```bash
 # set environment variables:
 export REACT_NATIVE_PACKAGER_HOSTNAME=${YOUR_HOST}
@@ -80,7 +87,6 @@ docker compose build
 # Run the container
 docker compose up
 ```
-
 ---
 
 ### 3. Test:
@@ -108,13 +114,13 @@ docker compose \
 
 ---
 
-### 4. services देखें:
+### 4. Services देखें:
 
 - Backend API: http://localhost:8000/docs
 !["backend"](./assets/images/backend.png)
 
 - Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${YOUR_HOST}:8081: Expo द्वारा दिए गए QR से access करें।
+- Frontend UI (mobile): exp://${YOUR_HOST}:8081: Expo द्वारा दिए गए QR से access करें.
 !["expo"](./assets/images/expo.png)
 
 ---

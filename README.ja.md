@@ -5,7 +5,7 @@ permalink: /ja/
 lang: ja
 ---
 
-# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Standard React FastAPI Environment")
+# [Standard React FastAPI Environment](https://github.com/europanite/standard_react_fastapi_environment "Expo React Native + FastAPI Backend Starter")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![OS](https://img.shields.io/badge/OS-Linux%20%7C%20macOS%20%7C%20Windows-blue)
@@ -37,28 +37,36 @@ lang: ja
   <a href="https://europanite.github.io/standard_react_fastapi_environment/fr/">🇫🇷 Français</a>
 </p>
 
+> これは `README.md` の翻訳版である。正本は英語版である。
+
+!["mobile_ui"](./assets/images/mobile_ui.png)
 
 !["web_ui"](./assets/images/web_ui.png)
 
+Expo React Native アプリを FastAPI backend に接続するための、すぐに実行できる full-stack starter container。
 
-次の技術を使用した **フルスタック開発環境** です。
+この template には、Expo React Native frontend、FastAPI backend、PostgreSQL、JWT authentication、CRUD APIs、Docker Compose、backend tests、frontend tests、GitHub Actions CI が含まれる。
 
-- **Frontend**: [Expo](https://expo.dev/)（[React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/)）  
+Expo で mobile app または web app を構築し、FastAPI backend に接続したい場合に、この repository を使用する。
+
+**full-stack development environment** の構成:
+
+- **Frontend**: [Expo](https://expo.dev/) ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))  
   - 単一の codebase で **Web、Android、iOS** に対応
-- **Backend**: [FastAPI](https://fastapi.tiangolo.com/)（Python）  
+- **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)  
 - **Database**: [PostgreSQL](https://www.postgresql.org/)
-- **Container**: 一貫した開発環境を構築するための [Docker Compose](https://docs.docker.com/compose/)
+- **Container**: 一貫した development setup のための [Docker Compose](https://docs.docker.com/compose/)
 
 ---
 
 ## Features
 
-- Expo による **クロスプラットフォーム frontend**  
-  - **web app** として実行でき、Expo Go または standalone builds を使って **Android/iOS devices** でも動作
-- **CRUD operations** : records の作成、読み取り、更新、削除
+- Expo による **Cross-platform frontend**  
+  - Expo Go または standalone builds を通じて、**web app** として、または **Android/iOS devices** 上で実行可能
+- **CRUD operations** : records の Create、Read、Update、Delete
 - **Auth operations** : Signup、Signin、Signout
-- automatic docs を備えた **FastAPI backend**
-  - Swagger UI (/docs) による REST API
+- automatic docs 付きの **FastAPI backend**
+  - `/api/v1` 配下の versioned REST API と Swagger UI (`/docs`)
 
 ---
 
@@ -66,10 +74,9 @@ lang: ja
 
 ### 1. Prerequisites
 - [Docker Compose](https://docs.docker.com/compose/)
-- [Expo Go](https://expo.dev/go)（Android/iOS testing 用）
+- [Expo Go](https://expo.dev/go) (Android/iOS testing 用)
 
 ### 2. すべての services を build して start する:
-
 ```bash
 # set environment variables:
 export REACT_NATIVE_PACKAGER_HOSTNAME=${YOUR_HOST}
@@ -80,7 +87,6 @@ docker compose build
 # Run the container
 docker compose up
 ```
-
 ---
 
 ### 3. Test:
@@ -108,13 +114,13 @@ docker compose \
 
 ---
 
-### 4. services にアクセスする:
+### 4. Services にアクセスする:
 
 - Backend API: http://localhost:8000/docs
 !["backend"](./assets/images/backend.png)
 
 - Frontend UI (WEB): http://localhost:8081
-- Frontend UI (mobile): exp://${YOUR_HOST}:8081: Expo が表示する QR からアクセスします。
+- Frontend UI (mobile): exp://${YOUR_HOST}:8081: Expo が提供する QR から access する。
 !["expo"](./assets/images/expo.png)
 
 ---

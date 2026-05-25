@@ -34,9 +34,9 @@ def client() -> Iterator[TestClient]:
 def auth_token(client: TestClient) -> str:
     email = "tester@example.com"
     pw = "secretpw"
-    r = client.post("/auth/signup", json={"email": email, "password": pw})
+    r = client.post("/api/v1/auth/signup", json={"email": email, "password": pw})
     assert r.status_code in (HTTPStatus.CREATED, HTTPStatus.BAD_REQUEST)
-    r = client.post("/auth/signin", json={"email": email, "password": pw})
+    r = client.post("/api/v1/auth/signin", json={"email": email, "password": pw})
     assert r.status_code == HTTPStatus.OK, r.text
     return r.json()["access_token"]
 

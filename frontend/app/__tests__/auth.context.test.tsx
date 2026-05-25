@@ -55,6 +55,6 @@ test('signUp calls signIn internally', async () => {
   });
 
   expect(fetchMock).toHaveBeenCalledTimes(2); // signup -> signin
-  expect(fetchMock.mock.calls[0][0]).toContain('/auth/signup');
-  expect(fetchMock.mock.calls[1][0]).toContain('/auth/signin');
+  expect(fetchMock.mock.calls[0][0]).toContain('/api/v1/auth/signup');
+  expect(fetchMock.mock.calls[1][0]).toContain('/api/v1/auth/signin');
 });
